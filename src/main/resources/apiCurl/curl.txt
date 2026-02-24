@@ -1,0 +1,40 @@
+curl --location 'http://localhost:8080/api/todos' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE5MzkwMjQsImV4cCI6MTc3MTkzOTkyNH0._f8ieY_MRA9vFFipn9JvtrQEW1WP_C3crCLb1Vja7h31q-UX4YjsOCqr8H8efclI' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "New Item 23",
+    "description": "Test create item 23",
+    "status": "PENDING",
+    "priority": "LOW",
+    "dueDate": "2026-02-28"
+  }'
+  
+  curl --location 'http://localhost:8080/api/profile' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE5MzkwMjQsImV4cCI6MTc3MTkzOTkyNH0._f8ieY_MRA9vFFipn9JvtrQEW1WP_C3crCLb1Vja7h31q-UX4YjsOCqr8H8efclI' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=459D887F9074C2EB20F12085A6352C08' \
+--data ''
+
+
+curl --location 'http://localhost:8080/api/todos' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE5MzkwMjQsImV4cCI6MTc3MTkzOTkyNH0._f8ieY_MRA9vFFipn9JvtrQEW1WP_C3crCLb1Vja7h31q-UX4YjsOCqr8H8efclI' \
+--header 'Accept: application/json'
+
+curl --location --request PUT 'http://localhost:8080/api/todos/531fe513-312a-422f-a895-b58bc2a27792' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE5MzkwMjQsImV4cCI6MTc3MTkzOTkyNH0._f8ieY_MRA9vFFipn9JvtrQEW1WP_C3crCLb1Vja7h31q-UX4YjsOCqr8H8efclI' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data '{
+    "status" : "DONE"
+}'
+
+curl --location 'http://localhost:8080/api/todos/531fe513-312a-422f-a895-b58bc2a27792' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE5MzkwMjQsImV4cCI6MTc3MTkzOTkyNH0._f8ieY_MRA9vFFipn9JvtrQEW1WP_C3crCLb1Vja7h31q-UX4YjsOCqr8H8efclI' \
+--header 'Accept: application/json' \
+--header 'Cookie: JSESSIONID=459D887F9074C2EB20F12085A6352C08'
+
+curl --location --request DELETE 'http://localhost:8080/api/todos/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa2' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJpc3MiOiJ0b2RvYXBwIiwic3ViIjoic2FoaXJhbS5kdWtpeWFAc2ltYWR2aXNvcnl0ZWNoLmNvbSIsInVpZCI6IjZhZDBmZTFjLWY1YWYtNDFiYi1iOGU3LWMzNmM0ZmY0ZWU0NyIsInVuYW1lIjoic2FhaGkiLCJpYXQiOjE3NzE3NTQwMTIsImV4cCI6MTc3MTc1NDkxMn0.6g4xRp95HOumvydVhICwdNVT0njAr0D7abPUNQRiTkH0FpwAPOckbG36WGUP0tgR' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Cookie: JSESSIONID=459D887F9074C2EB20F12085A6352C08'
