@@ -2,30 +2,24 @@ package com.example.todoapp.cache
 
 import com.example.todoapp.domain.todo.TodoPriority
 import com.example.todoapp.domain.todo.TodoStatus
-import org.springframework.data.domain.Pageable
 import java.time.LocalDate
 import java.util.UUID
 import java.util.zip.CRC32
+import org.springframework.data.domain.Pageable
 
 object CacheKeys {
 
     // ---- Todo list caching ----
-    // version key for per-user list invalidation
-    @JvmStatic
-    fun todosVersion(userId: UUID): String = "todos:version:$userId"
-
-    // list cache key: todos:{userId}:{version}:{queryHash}
-    @JvmStatic
-    fun todos(userId: UUID, version: Long, queryHash: String): String =
-        "todos:$userId:$version:$queryHash"
+    // list cache key: todos:{userId}:{queryHash}
+    @JvmStatic fun todos(userId: UUID, queryHash: String): String = "todos:$userId:$queryHash"
 
     // query hash: stable for (status, priority, dueDate, pageable)
     @JvmStatic
     fun queryHash(
-        status: TodoStatus?,
-        priority: TodoPriority?,
-        dueDate: LocalDate?,
-        pageable: Pageable
+            status: TodoStatus?,
+            priority: TodoPriority?,
+            dueDate: LocalDate?,
+            pageable: Pageable
     ): String {
         val raw = buildString {
             append("status=").append(status?.name ?: "").append('|')
@@ -43,10 +37,8 @@ object CacheKeys {
     }
 
     // ---- Single todo caching ----
-    @JvmStatic
-    fun todo(userId: UUID, todoId: UUID): String = "todo:$userId:$todoId"
+    @JvmStatic fun todo(userId: UUID, todoId: UUID): String = "todo:$userId:$todoId"
 
     // ---- Profile caching ----
-    @JvmStatic
-    fun userProfile(userId: UUID): String = "profile:$userId"
+    @JvmStatic fun userProfile(userId: UUID): String = "user:$userId"
 }
