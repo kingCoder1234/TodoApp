@@ -6,9 +6,9 @@ spring:
     name: todoapp
 
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: YOUR_JDBC_URL
+    username: YOUR_DB_USERNAME
+    password: YOUR_DB_PASSWORD
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -30,23 +30,21 @@ spring:
       port: 6379
 
 jwt:
-  secret: ${MY_SECRET_JWT_KEY}
+  secret: YOUR_JWT_SECRET_KEY
   access-token-expiration-seconds: 900
   issuer: "todoapp"
 
 auth:
-  refresh-token-days: ${REFRESH_TOKEN_DAYS}
+  refresh-token-days: 7
 
 app:
   pagination:
     default-size: 20
     max-size: 100
   cache:
-    max-entries: 10000
     todo-list-ttl-minutes: 5
-    todo-single-ttl-minutes: 30
+    todo-single-ttl-minutes: 10
     profile-ttl-minutes: 30
-    version-ttl-minutes: 60
 
 logging:
   level:
